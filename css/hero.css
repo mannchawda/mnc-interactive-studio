@@ -453,3 +453,13 @@ body::after {
   .hero-actions a { width: 100%; text-align: center; }
   .hero-pills { gap: 0.4rem; }
 }
+
+/* Remove excess gap below stats bar */
+.stats-bar {
+  margin-bottom: 0;
+}
+
+/* Tighten about section top */
+#about {
+  padding-top: 80px;
+}

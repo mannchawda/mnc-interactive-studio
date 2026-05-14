@@ -463,3 +463,18 @@ body::after {
 #about {
   padding-top: 80px;
 }
+
+/* Remove gap between hero pills and marquee */
+.hero-pills { margin-bottom: 0; }
+
+.marquee-strip { margin-top: 0; }
+
+/* Bigger section titles */
+.section-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 0.8rem;
+}
+
+.section-sub {
+  margin-bottom: 2.5rem;
+}

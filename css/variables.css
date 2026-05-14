@@ -73,3 +73,14 @@
   --max-w:      1200px;
   --section-py: 120px;
 }
+
+/* ── Section spacing fix ── */
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#about  { padding-top: 60px; }
+#contact { padding-top: 60px; }
+
+.stats-bar { margin-bottom: 0; padding: 2rem 5vw; }

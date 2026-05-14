@@ -32,7 +32,16 @@ body::after {
   margin: 0 auto;
   padding: 0 5vw;
 }
-.section { padding: var(--section-py) 0; position: relative; z-index: 2; }
+.section {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+  position: relative;
+  z-index: 2;
+}
+
+/* Tighter top padding for sections after stats */
+#about   { padding-top: 60px; }
+#contact { padding-top: 60px; }
 
 .section-label {
   display: flex; align-items: center; gap: 12px;
@@ -55,9 +64,12 @@ body::after {
   color: var(--white);
   margin-bottom: 1rem;
 }
+
 .section-sub {
-  font-size: 1.05rem; color: var(--white2);
-  margin-bottom: 4rem; max-width: 520px;
+  font-size: 1.05rem;
+  color: var(--white2);
+  margin-bottom: 2.5rem;
+  max-width: 520px;
 }
 
 .accent-blue   { color: var(--blue); }

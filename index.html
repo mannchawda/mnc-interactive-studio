@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MNC. Interactive Studios — We Build Worlds</title>
+  <meta name="description" content="MNC. Interactive Studios — Game Development, 3D Art & Assets, Web Development. We craft interactive worlds and digital experiences." />
+  <meta property="og:title" content="MNC. Interactive Studios — We Build Worlds" />
+  <meta property="og:description" content="Game Dev · 3D Art · Web Development. Crafting interactive experiences from concept to launch." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/work.css" />
+  <link rel="stylesheet" href="css/process.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+  </div>
+
+  <!-- Background Effects -->
+  <canvas id="starfield"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="scanlines"></div>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">
+      <div class="logo-dot"></div>
+      MNC.<span>&nbsp;Interactive Studios</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Us</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#services" class="mob-link">Services</a></li>
+      <li><a href="#work" class="mob-link">Work</a></li>
+      <li><a href="#process" class="mob-link">Process</a></li>
+      <li><a href="#contact" class="mob-link">Hire Us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ HERO ═══════════ -->
+<section id="home" class="hero">
+
+  <!-- HUD corners -->
+  <div class="hero-hud-tl">
+    <span class="hud-label">SYS // ONLINE</span>
+    <span class="hud-value blink">■</span>
+  </div>
+  <div class="hero-hud-tr">
+    <span class="hud-label">COORDINATES</span>
+    <span class="hud-value">21.1702° N / 72.8311° E</span>
+  </div>
+  <div class="hero-hud-bl">
+    <span class="hud-label">BUILD</span>
+    <span class="hud-value">v2.0.26</span>
+  </div>
+  <div class="hero-hud-br">
+    <span class="hud-label">STATUS</span>
+    <span class="hud-value green-text">AVAILABLE FOR HIRE</span>
+  </div>
+
+  <!-- 3D particle canvas -->
+  <canvas id="heroCanvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">EST. 2024 · SURAT, INDIA</span>
+      <span class="eyebrow-line"></span>
+    </div>
+
+    <!-- Main glitch title -->
+    <h1 class="hero-title glitch-wrap">
+      <span class="glitch" data-text="MNC.">MNC.</span>
+      <br/>
+      <span class="glitch sub-glitch" data-text="INTERACTIVE">INTERACTIVE</span>
+      <br/>
+      <span class="glitch sub-glitch2" data-text="STUDIOS">STUDIOS</span>
+    </h1>
+
+    <!-- Typewriter tagline -->
+    <p class="hero-tagline">
+      <span class="typewriter" id="typewriter"></span>
+      <span class="cursor-blink">_</span>
+    </p>
+
+    <p class="hero-sub">
+      Game Development · 3D Art &amp; Assets · Web Development<br/>
+      From concept to launch — we craft experiences that matter.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">
+        <span class="btn-icon">▶</span> View Our Work
+      </a>
+      <a href="#contact" class="btn-ghost">Start a Project →</a>
+    </div>
+
+    <!-- Service pills -->
+    <div class="hero-pills">
+      <span class="pill">⚡ C++ / Unreal</span>
+      <span class="pill">◈ Blender 3D</span>
+      <span class="pill">⬡ Next.js</span>
+      <span class="pill">◎ Game Design</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span class="scroll-line"></span>
+    <span class="scroll-label">SCROLL</span>
+  </div>
+</section>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>GAME DEVELOPMENT</span><span class="sep">◆</span>
+    <span>3D ART & ASSETS</span><span class="sep">◆</span>
+    <span>WEB DEVELOPMENT</span><span class="sep">◆</span>
+    <span>C++ / UNREAL ENGINE</span><span class="sep">◆</span>
+    <span>BLENDER 3D</span><span class="sep">◆</span>
+    <span>NEXT.JS / SUPABASE</span><span class="sep">◆</span>
+    <span>INTERACTIVE EXPERIENCES</span><span class="sep">◆</span>
+    <span>GAME DEVELOPMENT</span><span class="sep">◆</span>
+    <span>3D ART & ASSETS</span><span class="sep">◆</span>
+    <span>WEB DEVELOPMENT</span><span class="sep">◆</span>
+    <span>C++ / UNREAL ENGINE</span><span class="sep">◆</span>
+    <span>BLENDER 3D</span><span class="sep">◆</span>
+    <span>NEXT.JS / SUPABASE</span><span class="sep">◆</span>
+    <span>INTERACTIVE EXPERIENCES</span><span class="sep">◆</span>
+  </div>
+</div>
+
+  <!-- ═══════════ STATS BAR ═══════════ -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num" data-target="4">0</span>
+        <span class="stat-label">Projects Shipped</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="2">0</span>
+        <span class="stat-label">Years Building</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Core Services</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="100">0</span>
+        <span class="stat-label">% Commitment</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span>// ABOUT THE STUDIO</span>
+      </div>
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <h2 class="section-title">
+            A Studio Built on<br/>
+            <span class="accent-blue">Craft</span> &amp;
+            <span class="accent-amber">Code.</span>
+          </h2>
+          <p class="about-body">
+            MNC. Interactive Studios is an independent creative studio specializing in
+            game development, 3D art, and web experiences. We operate at the intersection
+            of engineering precision and artistic vision — building things that are
+            technically sound and visually unforgettable.
+          </p>
+          <p class="about-body">
+            Founded by Mann Chawda, a Computer Science engineer and self-taught 3D artist
+            with a deep passion for interactive media. Every project we take on is built
+            from scratch, with full ownership of the craft — no templates, no shortcuts.
+          </p>
+          <div class="about-tags">
+            <span class="tag">C++ / Unreal Engine</span>
+            <span class="tag">Blender 3D</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">SFML</span>
+            <span class="tag">Game Design</span>
+            <span class="tag">3D Rendering</span>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <div class="about-card">
+            <div class="card-hud-corner tl"></div>
+            <div class="card-hud-corner tr"></div>
+            <div class="card-hud-corner bl"></div>
+            <div class="card-hud-corner br"></div>
+            <div class="about-card-inner">
+              <div class="studio-info-row">
+                <span class="info-label">FOUNDED</span>
+                <span class="info-value">2024</span>
+              </div>
+              <div class="studio-info-row">
+                <span class="info-label">BASED IN</span>
+                <span class="info-value">Surat, India</span>
+              </div>
+              <div class="studio-info-row">
+                <span class="info-label">FOCUS</span>
+                <span class="info-value">Games · 3D · Web</span>
+              </div>
+              <div class="studio-info-row">
+                <span class="info-label">STATUS</span>
+                <span class="info-value green-text">Open for Projects</span>
+              </div>
+              <div class="studio-info-row">
+                <span class="info-label">STACK</span>
+                <span class="info-value">C++ · Blender · Next.js</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICES ═══════════ -->
+  <section id="services" class="services section">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span>// WHAT WE BUILD</span>
+      </div>
+      <h2 class="section-title reveal">Our Services</h2>
+      <p class="section-sub reveal">Three disciplines. One studio. End-to-end capability.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal" data-index="01">
+          <div class="service-index">01</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 20l-6 4 6 4M32 20l6 4-6 4M22 30l4-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Game Development</h3>
+          <p class="service-desc">
+            Custom game builds from concept to playable — 2D shooters, text RPGs,
+            arcade games. Built in C++ with SFML or Unreal Engine. Clean architecture,
+            proper game loops, state machines, and collision systems.
+          </p>
+          <ul class="service-list">
+            <li>C++ / SFML Game Builds</li>
+            <li>Unreal Engine Prototypes</li>
+            <li>Game Design & Mechanics</li>
+            <li>2D / 3D Gameplay Systems</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">C++</span>
+            <span class="service-tag">SFML</span>
+            <span class="service-tag">Unreal</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal featured" data-index="02">
+          <div class="service-index">02</div>
+          <div class="featured-badge">Most Requested</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6L42 18V36L24 42L6 36V18L24 6Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 6V42M6 18L42 18M6 36L42 36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+          <h3 class="service-title">3D Art &amp; Assets</h3>
+          <p class="service-desc">
+            High-quality 3D models, game-ready assets, architectural renders,
+            isometric scenes and product visualizations. Created in Blender with
+            full UV unwrapping, texturing, and EEVEE/Cycles rendering.
+          </p>
+          <ul class="service-list">
+            <li>Game Props & Environments</li>
+            <li>Architectural Visualization</li>
+            <li>Product Renders</li>
+            <li>Isometric Scene Design</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">Blender</span>
+            <span class="service-tag">EEVEE</span>
+            <span class="service-tag">Cycles</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal" data-index="03">
+          <div class="service-index">03</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="40" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 16h40M14 8v8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="9" cy="12" r="2" fill="currentColor"/>
+              <circle cx="15" cy="12" r="2" fill="currentColor"/>
+              <circle cx="21" cy="12" r="2" fill="currentColor"/>
+              <path d="M12 28l4-4 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">
+            Full-stack web applications and portfolio sites — from landing pages
+            to database-backed platforms. Built with Next.js, Tailwind, Supabase,
+            and deployed on Vercel with clean, maintainable code.
+          </p>
+          <ul class="service-list">
+            <li>Portfolio & Studio Sites</li>
+            <li>Full-Stack Web Apps</li>
+            <li>Database & Backend (Supabase)</li>
+            <li>Performance & SEO Optimization</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">Next.js</span>
+            <span class="service-tag">Supabase</span>
+            <span class="service-tag">Vercel</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ WORK ═══════════ -->
+  <section id="work" class="work section">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span>// SELECTED WORK</span>
+      </div>
+      <h2 class="section-title reveal">Projects</h2>
+      <p class="section-sub reveal">Built from scratch. Shipped with purpose.</p>
+
+      <div class="work-grid">
+
+        <div class="work-card reveal" data-type="Game Dev">
+          <div class="work-card-top">
+            <div class="work-visual game1">
+              <div class="work-visual-hud">
+                <span>NEONSTRIKE.EXE</span>
+                <span class="blink">▶ RUNNING</span>
+              </div>
+              <div class="work-ascii">
+                <pre>  ∧  ◈  ∧
+ /█\ ↑ /█\
+◄█████████►
+ \█/ ↓ \█/</pre>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-meta">
+              <span class="work-type">Game Dev</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">NeonStrike</h3>
+            <p class="work-desc">Real-time 2D space shooter built in C++ and SFML 3.0.
+            60 FPS game loop, AABB collision, state machine, enemy spawning system.</p>
+            <div class="work-stack">
+              <span>C++</span><span>SFML 3.0</span><span>GCC 15.2</span>
+            </div>
+            <a href="https://github.com/mannchawda/NeonStrike" target="_blank" class="work-link">
+              View on GitHub →
+            </a>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-type="Game Dev">
+          <div class="work-card-top">
+            <div class="work-visual game2">
+              <div class="work-visual-hud">
+                <span>NEONEXILE.EXE</span>
+                <span class="blink">▶ RUNNING</span>
+              </div>
+              <div class="work-ascii">
+                <pre>> CHOOSE PATH
+  [A] GO LEFT
+  [B] GO RIGHT
+  [C] FIGHT_</pre>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-meta">
+              <span class="work-type">Game Dev</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">NeonExile</h3>
+            <p class="work-desc">Branching narrative RPG with 3 unique endings.
+            Typewriter animation, ANSI terminal UI, multi-file C++ architecture.</p>
+            <div class="work-stack">
+              <span>C++</span><span>ANSI Terminal</span><span>Chrono</span>
+            </div>
+            <a href="https://github.com/mannchawda/NeonExile" target="_blank" class="work-link">
+              View on GitHub →
+            </a>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-type="Web Dev">
+          <div class="work-card-top">
+            <div class="work-visual web1">
+              <div class="work-visual-hud">
+                <span>AXIOM.VERCEL</span>
+                <span class="green-text">● LIVE</span>
+              </div>
+              <div class="work-browser-mock">
+                <div class="browser-bar">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot amber"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="bc-line w80"></div>
+                  <div class="bc-line w50"></div>
+                  <div class="bc-line w65"></div>
+                  <div class="bc-grid">
+                    <div class="bc-card"></div>
+                    <div class="bc-card"></div>
+                    <div class="bc-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-meta">
+              <span class="work-type web">Web Dev</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">AXIOM Portfolio</h3>
+            <p class="work-desc">Full-stack portfolio with Supabase backend, admin panel,
+            Framer Motion animations, RLS security policies, and live Vercel deployment.</p>
+            <div class="work-stack">
+              <span>Next.js</span><span>Supabase</span><span>Framer Motion</span>
+            </div>
+            <a href="https://my-portfolio-six-psi-30.vercel.app/" target="_blank" class="work-link">
+              View Live →
+            </a>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-type="3D Art">
+          <div class="work-card-top">
+            <div class="work-visual art1">
+              <div class="work-visual-hud">
+                <span>BLENDER.SCENE</span>
+                <span class="amber-text">◈ RENDER</span>
+              </div>
+              <div class="work-3d-mock">
+                <div class="mesh-cube">
+                  <div class="face front"></div>
+                  <div class="face back"></div>
+                  <div class="face left"></div>
+                  <div class="face right"></div>
+                  <div class="face top"></div>
+                  <div class="face bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-meta">
+              <span class="work-type art">3D Art</span>
+              <span class="work-year">2024–25</span>
+            </div>
+            <h3 class="work-title">3D Art Portfolio</h3>
+            <p class="work-desc">Game props, architectural renders, isometric scenes and
+            product visualizations. 1–2 years self-taught in Blender, plus formal training.</p>
+            <div class="work-stack">
+              <span>Blender</span><span>EEVEE</span><span>Cycles</span>
+            </div>
+            <a href="https://my-portfolio-six-psi-30.vercel.app/" target="_blank" class="work-link">
+              View Portfolio →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROCESS ═══════════ -->
+  <section id="process" class="process section">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span>// HOW WE WORK</span>
+      </div>
+      <h2 class="section-title reveal">The Process</h2>
+      <p class="section-sub reveal">Simple, transparent, and built around you.</p>
+
+      <div class="process-track">
+        <div class="process-line"></div>
+
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Brief &amp; Discovery</h3>
+            <p>You share your vision, goals, and requirements.
+            We ask the right questions to understand exactly
+            what needs to be built and why.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Plan &amp; Scope</h3>
+            <p>We define the full scope, tech stack, timeline,
+            and deliverables. No vague estimates — clear milestones
+            so you always know what's happening.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Build &amp; Iterate</h3>
+            <p>We build in focused sprints with regular check-ins.
+            You see progress as it happens — not just at the end.
+            Feedback loops are tight and fast.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Deliver &amp; Support</h3>
+            <p>Final delivery includes full source code, documentation,
+            and a walkthrough. We stay available post-launch
+            for fixes, updates, and next steps.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span>// START A PROJECT</span>
+      </div>
+      <h2 class="section-title reveal">Let's Build<br/><span class="accent-blue">Something.</span></h2>
+      <p class="section-sub reveal">
+        Have a project in mind? A game idea, a 3D asset, a website?<br/>
+        Tell us about it — we'll get back within 24 hours.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <span class="contact-label">EMAIL</span>
+            <a href="mailto:mann.chawda.work@gmail.com" class="contact-value">
+              mann.chawda.work@gmail.com
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">GITHUB</span>
+            <a href="https://github.com/mannchawda" target="_blank" class="contact-value">
+              github.com/mannchawda
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">LINKEDIN</span>
+            <a href="https://linkedin.com/in/mann-chawda" target="_blank" class="contact-value">
+              linkedin.com/in/mann-chawda
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">LOCATION</span>
+            <span class="contact-value">Surat, Gujarat, India</span>
+          </div>
+          <div class="contact-availability">
+            <span class="avail-dot"></span>
+            <span>Currently available for freelance projects</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">YOUR NAME</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">YOUR EMAIL</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">SERVICE NEEDED</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option value="gamedev">Game Development</option>
+              <option value="3dart">3D Art & Assets</option>
+              <option value="webdev">Web Development</option>
+              <option value="other">Other / Multiple</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">TELL US ABOUT YOUR PROJECT</label>
+            <textarea id="message" name="message" rows="5"
+              placeholder="Describe your project, timeline, and budget..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            Send Message →
+          </button>
+          <p class="form-note">We respond within 24 hours.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">MNC.<span class="accent-blue"> Interactive Studios</span></span>
+          <p>Building worlds, one line at a time.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MNC. Interactive Studios. All rights reserved.</span>
+        <span class="footer-status">
+          <span class="avail-dot sm"></span>
+          Open for projects
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/cursor.js"></script>
+  <script src="js/starfield.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+</html>

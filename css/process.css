@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════
+   MNC. Interactive Studios — Process
+═══════════════════════════════════════════ */
+
+.process {
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+.process::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    var(--blue-glow2) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Track layout */
+.process-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1rem;
+  padding-left: 80px;
+}
+
+/* Vertical connecting line */
+.process-line {
+  position: absolute;
+  left: 28px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--border2) 10%,
+    var(--border2) 90%,
+    transparent 100%
+  );
+}
+
+/* Individual Step */
+.process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s var(--ease);
+}
+.process-step:last-child { border-bottom: none; }
+.process-step:hover { padding-left: 8px; }
+
+/* Step Number Circle */
+.step-number {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--bg);
+  background: var(--blue);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -66px;
+  top: 2.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--bg2),
+              0 0 20px var(--blue-glow);
+  transition: box-shadow 0.3s, transform 0.3s var(--ease2);
+  z-index: 2;
+}
+.process-step:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px var(--bg2),
+              0 0 32px var(--blue-glow);
+}
+
+/* Step Content */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.8rem;
+}
+.step-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.process-step:hover .step-content h3 {
+  color: var(--blue);
+}
+.step-content p {
+  font-size: 0.95rem;
+  color: var(--white2);
+  line-height: 1.8;
+  max-width: 580px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .process-track {
+    padding-left: 56px;
+  }
+  .process-line {
+    left: 20px;
+  }
+  .step-number {
+    width: 38px; height: 38px;
+    font-size: 0.62rem;
+    left: -50px;
+  }
+  .step-content h3 { font-size: 0.95rem; }
+  .step-content p  { font-size: 0.88rem; }
+}

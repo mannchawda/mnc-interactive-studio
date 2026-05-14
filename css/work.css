@@ -1,0 +1,299 @@
+/* ═══════════════════════════════════════════
+   MNC. Interactive Studios — Work
+═══════════════════════════════════════════ */
+
+.work {
+  background: var(--bg);
+  position: relative;
+}
+.work::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    ellipse 50% 40% at 50% 100%,
+    var(--blue-glow2) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Work Card */
+.work-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease),
+              transform 0.3s var(--ease),
+              box-shadow 0.3s var(--ease);
+}
+.work-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5),
+              0 0 48px var(--blue-glow2);
+}
+
+/* Card Top — Visual Area */
+.work-card-top { position: relative; overflow: hidden; }
+
+.work-visual {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Game 1 — NeonStrike */
+.work-visual.game1 {
+  background:
+    linear-gradient(135deg, #0a0a1a 0%, #0d1a2e 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+.work-visual.game1::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(56,189,248,0.08) 0%, transparent 60%),
+    radial-gradient(circle at 70% 50%, rgba(56,189,248,0.05) 0%, transparent 60%);
+}
+
+/* Game 2 — NeonExile */
+.work-visual.game2 {
+  background:
+    linear-gradient(135deg, #0a0a1a 0%, #1a0d2e 100%);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+.work-visual.game2::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(139, 92, 246, 0.08) 0%,
+    transparent 60%
+  );
+}
+
+/* Web 1 — AXIOM */
+.work-visual.web1 {
+  background: linear-gradient(135deg, #050510 0%, #0a1020 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+/* Art 1 — 3D */
+.work-visual.art1 {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a0a 100%);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.15);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.work-visual.art1::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(251, 191, 36, 0.06) 0%,
+    transparent 60%
+  );
+}
+
+/* HUD bar on visual */
+.work-visual-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white3);
+  position: relative; z-index: 2;
+  background: rgba(0,0,0,0.3);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+/* ASCII art display */
+.work-ascii {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative; z-index: 2;
+}
+.work-ascii pre {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--blue);
+  text-align: center;
+  line-height: 1.6;
+  text-shadow: 0 0 12px var(--blue);
+  white-space: pre;
+}
+.work-visual.game2 .work-ascii pre {
+  color: #a78bfa;
+  text-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+}
+
+/* Browser mockup for web card */
+.work-browser-mock {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative; z-index: 2;
+  margin-top: 0.5rem;
+}
+.browser-bar {
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 10px;
+  background: var(--surface3);
+  border-bottom: 1px solid var(--border);
+}
+.b-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.b-dot.red   { background: #ff5f56; }
+.b-dot.amber { background: #ffbd2e; }
+.b-dot.green { background: #27c93f; }
+
+.browser-content {
+  padding: 10px 12px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.bc-line {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+}
+.bc-line.w80 { width: 80%; }
+.bc-line.w50 { width: 50%; }
+.bc-line.w65 { width: 65%; }
+.bc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px; margin-top: 4px;
+}
+.bc-card {
+  height: 36px;
+  background: var(--surface3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+/* 3D Cube for art card */
+.work-3d-mock {
+  perspective: 400px;
+  width: 80px; height: 80px;
+  position: relative; z-index: 2;
+}
+.mesh-cube {
+  width: 80px; height: 80px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate-cube 8s linear infinite;
+}
+@keyframes rotate-cube {
+  from { transform: rotateX(20deg) rotateY(0deg); }
+  to   { transform: rotateX(20deg) rotateY(360deg); }
+}
+.face {
+  position: absolute;
+  width: 80px; height: 80px;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  background: rgba(251, 191, 36, 0.04);
+}
+.face.front  { transform: translateZ(40px); }
+.face.back   { transform: translateZ(-40px) rotateY(180deg); }
+.face.left   { transform: translateX(-40px) rotateY(-90deg); }
+.face.right  { transform: translateX(40px) rotateY(90deg); }
+.face.top    { transform: translateY(-40px) rotateX(90deg); }
+.face.bottom { transform: translateY(40px) rotateX(-90deg); }
+
+/* Card Body */
+.work-card-body {
+  padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.work-type {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  border: 1px solid var(--border2);
+  background: var(--blue-glow2);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.work-type.web { color: var(--green); border-color: var(--green-glow); background: rgba(52,211,153,0.06); }
+.work-type.art { color: var(--amber); border-color: var(--amber-glow); background: rgba(251,191,36,0.06); }
+
+.work-year {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--white3);
+}
+
+.work-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.work-desc {
+  font-size: 0.88rem;
+  color: var(--white2);
+  line-height: 1.7;
+}
+
+.work-stack {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.work-stack span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--white3);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.work-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-decoration: none;
+  display: inline-flex; align-items: center;
+  transition: gap 0.2s, opacity 0.2s;
+  margin-top: 0.2rem;
+}
+.work-link:hover { opacity: 0.75; letter-spacing: 0.15em; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .work-grid { grid-template-columns: 1fr; }
+}

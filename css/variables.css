@@ -1,0 +1,75 @@
+/* ═══════════════════════════════════════════
+   MNC. Interactive Studios — Design Tokens v2
+═══════════════════════════════════════════ */
+
+:root {
+  /* Backgrounds — darker but richer */
+  --bg:         #020209;
+  --bg2:        #05050f;
+  --bg3:        #080818;
+  --surface:    #0c0c20;
+  --surface2:   #11112a;
+  --surface3:   #181838;
+
+  /* Borders */
+  --border:     rgba(255, 255, 255, 0.08);
+  --border2:    rgba(0, 212, 255, 0.25);
+  --border3:    rgba(255, 200, 0, 0.25);
+
+  /* Text */
+  --white:      #f4f6ff;
+  --white2:     #8b9bbf;
+  --white3:     #445070;
+
+  /* PRIMARY — electric cyan (brighter than before) */
+  --blue:       #00d4ff;
+  --blue2:      #00aadd;
+  --blue3:      #0077aa;
+  --blue-glow:  rgba(0, 212, 255, 0.30);
+  --blue-glow2: rgba(0, 212, 255, 0.10);
+
+  /* SECONDARY — vivid amber/gold */
+  --amber:      #ffcc00;
+  --amber2:     #ffaa00;
+  --amber-glow: rgba(255, 204, 0, 0.25);
+
+  /* ACCENT — electric green */
+  --green:      #00ff9f;
+  --green2:     #00cc7a;
+  --green-glow: rgba(0, 255, 159, 0.20);
+
+  /* ACCENT — hot magenta */
+  --magenta:      #ff00aa;
+  --magenta-glow: rgba(255, 0, 170, 0.20);
+
+  --red:        #ff4466;
+
+  /* Typography */
+  --font-display: 'Orbitron', monospace;
+  --font-body:    'Syne', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   2rem;
+  --space-xl:   4rem;
+  --space-2xl:  8rem;
+
+  /* Radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+
+  /* Transitions */
+  --ease:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease2:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration:   0.35s;
+
+  /* Layout */
+  --nav-h:      72px;
+  --max-w:      1200px;
+  --section-py: 120px;
+}

@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════
+   MNC. Interactive Studios — Services
+═══════════════════════════════════════════ */
+
+.services {
+  background: var(--bg2);
+  position: relative;
+}
+.services::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    var(--blue-glow2) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Service Card */
+.service-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: border-color 0.3s var(--ease),
+              transform 0.3s var(--ease),
+              box-shadow 0.3s var(--ease);
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--blue-glow2) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4),
+              0 0 48px var(--blue-glow2);
+}
+.service-card:hover::before { opacity: 1; }
+
+/* Featured card */
+.service-card.featured {
+  border-color: var(--border2);
+  background: var(--surface2);
+}
+.service-card.featured::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+.service-card.featured:hover {
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5),
+              0 0 64px var(--blue-glow);
+}
+
+.featured-badge {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber-glow);
+  background: rgba(251, 191, 36, 0.08);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Service Index */
+.service-index {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--white3);
+}
+
+/* Service Icon */
+.service-icon {
+  width: 48px; height: 48px;
+  color: var(--blue);
+  transition: color 0.2s, transform 0.3s var(--ease2);
+}
+.service-card:hover .service-icon {
+  color: var(--blue);
+  transform: scale(1.1) rotate(-3deg);
+}
+.service-icon svg {
+  width: 100%; height: 100%;
+}
+
+/* Service Title */
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+/* Service Description */
+.service-desc {
+  font-size: 0.9rem;
+  color: var(--white2);
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* Service List */
+.service-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.service-list li {
+  font-size: 0.85rem;
+  color: var(--white2);
+  padding-left: 1rem;
+  position: relative;
+}
+.service-list li::before {
+  content: '›';
+  position: absolute; left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* Service Footer Tags */
+.service-footer {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.service-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white3);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, border-color 0.2s;
+}
+.service-card:hover .service-tag {
+  color: var(--blue);
+  border-color: var(--border2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .service-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+}

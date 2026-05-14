@@ -156,3 +156,6 @@
   .process-step::after { display: none; }
   .process-cta { flex-direction: column; text-align: center; }
 }
+
+/* Reduce top gap */
+.process { padding-top: 60px; }

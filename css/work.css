@@ -297,3 +297,6 @@
 @media (max-width: 768px) {
   .work-grid { grid-template-columns: 1fr; }
 }
+
+/* Remove bottom gap */
+.work { padding-bottom: 60px; }

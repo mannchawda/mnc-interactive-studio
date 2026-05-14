@@ -128,3 +128,30 @@
   .about-right { order: -1; }
   .about-card { max-width: 100%; }
 }
+
+/* Glow enhancement */
+.about-card {
+  box-shadow: 0 0 0 1px var(--border2),
+              0 0 40px var(--blue-glow2),
+              inset 0 0 40px rgba(0,212,255,0.03);
+  transition: box-shadow 0.4s var(--ease);
+}
+.about-card:hover {
+  box-shadow: 0 0 0 1px var(--blue),
+              0 0 60px var(--blue-glow),
+              inset 0 0 60px rgba(0,212,255,0.05);
+}
+
+/* Highlight active info row on hover */
+.studio-info-row {
+  transition: background 0.2s, padding-left 0.2s;
+  border-radius: var(--radius-sm);
+  padding-left: 0.5rem;
+  margin: 0 -0.5rem;
+}
+.studio-info-row:hover {
+  background: rgba(0,212,255,0.05);
+  padding-left: 1rem;
+}
+.studio-info-row:hover .info-label { color: var(--blue); }
+.studio-info-row:hover .info-value { color: var(--white); }

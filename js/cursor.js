@@ -33,3 +33,44 @@ hoverEls.forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
 });
+
+// ── Click burst particles ─────────────
+document.addEventListener('click', e => {
+  const count = 10;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    const angle  = (i / count) * Math.PI * 2;
+    const dist   = 40 + Math.random() * 40;
+    const size   = 3 + Math.random() * 4;
+    const colors = ['#00d4ff','#ffcc00','#00ff9f','#ff00aa'];
+    const color  = colors[Math.floor(Math.random() * colors.length)];
+
+    Object.assign(p.style, {
+      position:     'fixed',
+      left:         e.clientX + 'px',
+      top:          e.clientY + 'px',
+      width:        size + 'px',
+      height:       size + 'px',
+      borderRadius: '50%',
+      background:   color,
+      boxShadow:    `0 0 ${size * 2}px ${color}`,
+      pointerEvents:'none',
+      zIndex:       9998,
+      transform:    'translate(-50%, -50%)',
+      transition:   'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+      opacity:      '1',
+    });
+
+    document.body.appendChild(p);
+
+    requestAnimationFrame(() => {
+      p.style.transform = `translate(
+        calc(-50% + ${Math.cos(angle) * dist}px),
+        calc(-50% + ${Math.sin(angle) * dist}px)
+      )`;
+      p.style.opacity = '0';
+    });
+
+    setTimeout(() => p.remove(), 600);
+  }
+});
